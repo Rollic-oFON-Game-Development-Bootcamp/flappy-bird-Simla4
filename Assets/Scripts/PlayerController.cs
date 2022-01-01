@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float velocity = 2.5f;
+    [SerializeField ]private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,16 @@ public class PlayerController : MonoBehaviour
         {
             //to bounce the bird
             rb.velocity = Vector2.up * velocity;
-
-            //Debug.Log("Pressed the mouse");
         }
+    }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "ScoreArea")
+        {
+            gameManager.ScoreUpdate();
+        }
+        
     }
 }
