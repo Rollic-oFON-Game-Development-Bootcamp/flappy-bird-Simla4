@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipMove : MonoBehaviour
+public class PipeMove : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float time = 10;
