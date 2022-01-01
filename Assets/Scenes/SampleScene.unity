@@ -755,7 +755,6 @@ GameObject:
   - component: {fileID: 1855374408}
   - component: {fileID: 1855374409}
   - component: {fileID: 1855374410}
-  - component: {fileID: 1855374411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -899,16 +898,3 @@ MonoBehaviour:
   isDead: 0
   rb: {fileID: 1855374408}
   velocity: 2.5
---- !u!114 &1855374411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855374404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53819d5722737ec439b548bbeaa3ee30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tScore: {fileID: 581519158}
