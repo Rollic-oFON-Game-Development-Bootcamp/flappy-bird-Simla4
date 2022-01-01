@@ -9,11 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float velocity = 2.5f;
     [SerializeField ]private GameManager gameManager;
+    [SerializeField] private UIManager gameOverUI;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -35,5 +36,16 @@ public class PlayerController : MonoBehaviour
             gameManager.ScoreUpdate();
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //to dead the bird
+        if(collision.gameObject.tag == "Bait")
+        {
+            isDead = true;
+            Time.timeScale = 0;
+            gameOverUI.GameOverUI();
+        }
     }
 }
