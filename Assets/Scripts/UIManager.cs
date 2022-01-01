@@ -1,18 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Text sbScore;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] PlayerController playerController;
+    [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject pause;
+    [SerializeField] GameObject tScore;
+    [SerializeField] GameObject startScene;
+
+    private void Update()
     {
-        
+        if(playerController.isDead == true)
+        {
+            GameOverUI();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameOverUI()
     {
-        
+        sbScore.text = gameManager.score.ToString();
+        gameOverUI.SetActive(true);
     }
+
+    public void StartGame()
+    {
+        player.SetActive(true);
+        pause.SetActive(true);
+        tScore.SetActive(true);
+        startScene.SetActive(false);
+    }
+
 }
