@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Text tScote;
     [SerializeField] private UIManager uIManager;
+
+    private bool isPause = false;
     
 
     public int score = 0;
@@ -41,5 +43,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void PauseGame()
+    {
+        isPause = !isPause;
+        if(isPause == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+    }
     
 }
