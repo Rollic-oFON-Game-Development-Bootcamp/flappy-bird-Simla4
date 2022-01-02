@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text sbScore;
-    [SerializeField] GameManager gameManager;
-    [SerializeField] PlayerController playerController;
-    [SerializeField] GameObject gameOverUI;
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject pause;
-    [SerializeField] GameObject tScore;
-    [SerializeField] GameObject startScene;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject pause;
+    [SerializeField] private GameObject tScore;
+    [SerializeField] private GameObject startScene;
+    [SerializeField] private HighScore highScore;
 
+    
     private void Update()
     {
         if(playerController.isDead == true)
@@ -34,6 +36,11 @@ public class UIManager : MonoBehaviour
         pause.SetActive(true);
         tScore.SetActive(true);
         startScene.SetActive(false);
+    }
+
+    public void HighScore()
+    {
+        highScore.GetHighScore(gameManager.score);
     }
 
 }

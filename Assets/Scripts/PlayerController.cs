@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float velocity = 2.5f;
     [SerializeField ]private GameManager gameManager;
-    [SerializeField] private UIManager gameOverUI;
+    [SerializeField] private UIManager uIManager;
     [SerializeField] private float tiltSmooth = 2f;
 
     private Quaternion downRotation;
@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
         {
             isDead = true;
             Time.timeScale = 0;
-            gameOverUI.GameOverUI();
+            uIManager.GameOverUI();
+            uIManager.HighScore();
         }
     }
 }
