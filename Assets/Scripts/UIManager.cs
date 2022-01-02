@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         sbScore.text = gameManager.score.ToString();
         gameOverUI.SetActive(true);
         pause.SetActive(false);
+     
     }
 
     public void StartGame()
